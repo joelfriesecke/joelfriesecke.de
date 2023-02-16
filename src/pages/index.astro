@@ -1,28 +1,33 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import "../assets/sass/style.sass";
+import { SEO } from "astro-seo";
+import Layout from "../layouts/layout.astro";
+
+const canonical = Astro.request.url;
 ---
 
-<html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class="h-screen w-screen">
-    <div
-      class="h-full w-full bg-center bg-cover"
-      style={{
-        backgroundImage: "url('https://source.unsplash.com/random')",
-      }}>
-      <div class="backdrop-blur-md h-full w-full">
-        <Navigation />
-        <div class="flex justify-center items-center mt-12">
-          <h1>Joel Friesecke</h1>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+<SEO
+  canonical="joelfriesecke.de"
+  title="Media meets Innovation - Ihr Dienstleister für kreative Mediengestaltung, Fotografie & Film und Webentwicklung"
+  description="Wir sind Ihr innovativer Partner für maßgeschneiderte Lösungen in den Bereichen Mediengestaltung, Fotografie & Film und Webentwicklung. Lassen Sie uns gemeinsam Ihre Visionen in die Realität umsetzen"
+  canonical={canonical}
+  extend={{
+    meta: [
+      {
+        name: "keywords",
+        content:
+          "Mediengestaltung, Grafikdesign, Fotografie, Filmproduktion, Webentwicklung, Responsive Design, SEO, Online-Präsenz, Social Media, Branding",
+      },
+    ],
+  }}
+/>
+<Layout>
+  <p>
+    Aktuell befindet sich diese Seite noch im Aufbau. Ich arbeite mit viel
+    Engagement und Freude daran, Ihnen in Kürze eine informative und
+    ansprechende Plattform zu präsentieren.
+  </p>
+  <p>
+    Bis dahin stehe ich Ihnen jedoch gerne persönlich zur Verfügung, um Ihre
+    Fragen und Anliegen zu beantworten.
+  </p><p>Beste Grüße, Joel</p>
+</Layout>
